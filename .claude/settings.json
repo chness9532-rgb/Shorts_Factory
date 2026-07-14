@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "model": "haiku",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File .claude/hooks/guard-shell.ps1",
+            "timeout": 15,
+            "statusMessage": "가드레일: 셸 명령 검사 중..."
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File .claude/hooks/guard-write.ps1",
+            "timeout": 15,
+            "statusMessage": "가드레일: 파일 쓰기 검사 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
