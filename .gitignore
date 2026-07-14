@@ -1,0 +1,33 @@
+# ===== Secrets (절대 커밋 금지) =====
+.env
+*.env
+*.key
+secrets.*
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+
+# ===== Virtual environments =====
+venv/
+.venv/
+env/
+
+# ===== 공장 생성물 (매 생산마다 새로 만들어짐) =====
+outputs/
+assets/backgrounds/bg*.jpg
+assets/backgrounds/bg*.svg
+assets/bgm.mp3
+
+# ===== 임시 폰트 패키지 다운로드 =====
+temp/
+
+# ===== Claude Code 로컬 설정 (개인/비밀 가능) =====
+.claude/settings.local.json
+
+# ===== OS / IDE =====
+Thumbs.db
+.DS_Store
+*.log
